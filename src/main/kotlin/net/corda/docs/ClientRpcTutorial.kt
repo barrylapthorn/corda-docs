@@ -1,9 +1,9 @@
-package com.r3corda.docs
+package net.corda.docs
 
 import com.google.common.net.HostAndPort
-import com.r3corda.client.CordaRPCClient
-import com.r3corda.core.transactions.SignedTransaction
-import com.r3corda.node.services.config.NodeSSLConfiguration
+import net.corda.client.CordaRPCClient
+import net.corda.core.transactions.SignedTransaction
+import net.corda.node.services.config.NodeSSLConfiguration
 import org.graphstream.graph.Edge
 import org.graphstream.graph.Node
 import org.graphstream.graph.implementations.SingleGraph
