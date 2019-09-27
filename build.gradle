@@ -86,7 +86,7 @@ task integrationTest(type: Test) {
     classpath = sourceSets.integrationTest.runtimeClasspath
 }
 
-task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
+task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar', ':testing:testserver:testcapsule:buildWebserverJar']) {
     directory "./build/nodes"
     node {
         name "O=Notary Service,OU=corda,L=London,C=GB"
