@@ -11,6 +11,7 @@ class LaunchSpaceshipFlow extends FlowLogic<Void> {
     @Suspendable
     @Override
     public Void call() throws FlowException {
+        @SuppressWarnings("deprecation")
         boolean shouldLaunchSpaceship = receive(Boolean.class, getPresident()).unwrap(s -> s);
         if (shouldLaunchSpaceship) {
             launchSpaceship();
@@ -37,6 +38,7 @@ class PresidentSpaceshipFlow extends FlowLogic<Void> {
 
     @Suspendable
     @Override
+    @SuppressWarnings("deprecation")
     public Void call() {
         boolean needCoffee = true;
         send(getSecretary(), needCoffee);
