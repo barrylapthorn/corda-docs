@@ -20,6 +20,7 @@ public class FinalityFlowMigration {
 
         @Suspendable
         @Override
+        @SuppressWarnings("deprecation")    // deprecated usage of Finality flow API.
         public SignedTransaction call() throws FlowException {
             SignedTransaction stx = dummyTransactionWithParticipant(counterparty);
             return subFlow(new FinalityFlow(stx));
@@ -79,6 +80,7 @@ public class FinalityFlowMigration {
 
         @Suspendable
         @Override
+        @SuppressWarnings("deprecation")    // deprecated usage of Finality flow API without session parameter.
         public SignedTransaction call() throws FlowException {
             SignedTransaction partiallySignedTx = dummyTransactionWithParticipant(counterparty);
             FlowSession session = initiateFlow(counterparty);
