@@ -36,7 +36,7 @@ class KotlinIntegrationTestingTutorial : IntegrationTest() {
         val databaseSchemas = IntegrationTestSchemas(ALICE_NAME, BOB_NAME, DUMMY_NOTARY_NAME)
     }
 
-    @Test
+    @Test(timeout=300_000)
     fun `alice bob cash exchange example`() {
         // START 1
         driver(DriverParameters(startNodesInProcess = true, cordappsForAllNodes = FINANCE_CORDAPPS)) {
