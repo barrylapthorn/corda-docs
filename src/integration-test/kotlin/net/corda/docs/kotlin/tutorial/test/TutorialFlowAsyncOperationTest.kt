@@ -14,7 +14,6 @@ import net.corda.testing.internal.IntegrationTestSchemas
 import net.corda.testing.node.User
 import org.junit.ClassRule
 import net.corda.testing.node.internal.cordappWithPackages
-import net.corda.testing.node.internal.findCordapp
 import org.junit.Test
 import kotlin.test.assertEquals
 
