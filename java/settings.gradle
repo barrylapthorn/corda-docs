@@ -16,8 +16,8 @@ include 'services:webservice'
 */
 
 
-include 'example-code'
-project(':example-code').projectDir = file("$settingsDir/content/corda-os/4.4/example-code")
+include 'corda-os-4-4-example-code'
+project(':corda-os-4-4-example-code').projectDir = file("$settingsDir/content/corda-os/4.4/example-code")
 
 rootProject.name = 'corda-docs'
 
