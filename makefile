@@ -54,7 +54,7 @@ hugo-serve-and-edit: hugo-docker-image ## Serve site from docker with a click-to
 #######################################################################################################################
 # Docker tasks - build the prod nginx image
 
-prod-hugo-build: hugo-docker-image ## Prod build, minimal size
+prod-hugo-build: gradle-build hugo-docker-image ## Prod build, minimal size
 	$(DOCKER_RUN) -u $$(id -u):$$(id -g) $(HUGO_DOCKER_IMAGE)  hugo $(HUGO_ARGS) --minify
 
 prod-docker-image: prod-hugo-build ## Create the prod docker image
@@ -74,8 +74,17 @@ publish: prod-docker-image ## Build site, and publish docker image to registry -
 all: help
 	echo ""
 
-clean: ## Remove (temp) repos
+clean: gradle-clean ## Remove build artifacts
 	rm -rf $(ROOT_DIR)/repos $(ROOT_DIR)/public
+
+#######################################################################################################################
+#  Example code building
+
+gradle-build: ## Run gradle build of example code
+	cd java && ./gradlew build
+
+gradle-clean: ## Clean example code
+	cd java && ./gradlew clean --quiet
 
 #######################################################################################################################
 # Searching - Site crawling
