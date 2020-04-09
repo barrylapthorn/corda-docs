@@ -1,16 +1,21 @@
+import static org.gradle.api.JavaVersion.VERSION_1_8
+
+apply plugin: 'java'
+sourceCompatibility = VERSION_1_8
+targetCompatibility = VERSION_1_8
+
 buildscript {
     // Dependencies of this build script, obviously.
     repositories {
         mavenCentral()
         jcenter()
+        maven { url 'https://kotlin.bintray.com/kotlinx' }
         maven { url 'https://software.r3.com/artifactory/corda-releases' }
         mavenLocal()
     }
 }
 
 allprojects {
-    apply plugin: 'java'
-
     apply from: "${rootProject.projectDir}/repositories.gradle"
 
     configurations {
