@@ -1,5 +1,8 @@
 include 'corda-os-4-4-example-code'
 project(':corda-os-4-4-example-code').projectDir = file("$settingsDir/src/corda-os/4.4/example-code")
 
+include 'corda-enterprise-4-4-example-code'
+project(':corda-enterprise-4-4-example-code').projectDir = file("$settingsDir/src/corda-enterprise/4.4/example-code")
+
 rootProject.name = 'corda-docs'
 
