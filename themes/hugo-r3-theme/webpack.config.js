@@ -24,6 +24,7 @@ module.exports = [{
                             name: "css/[name].css"
                         }
                     },
+                    "postcss-loader",
                     "extract-loader",
                     {
                         loader: "css-loader",
