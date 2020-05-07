@@ -3,7 +3,8 @@ const glob = require("glob");
 
 const PATHS = {
   root: __dirname,
-  src: path.join(__dirname, "src")
+  src: path.join(__dirname, "src"),
+  content: path.resolve(path.join(__dirname, '../..'))  // since the docs has some layout
 };
 
 // Add path to the Hugo theme files,
@@ -11,7 +12,9 @@ const PATHS = {
 // that we'll build for the final site.
 const filesThatUseCss = glob
   .sync(`${PATHS.root}/layouts/**/*.html`, { nodir: true })
-  .concat(glob.sync(`${PATHS.src}/**/*.js`, { nodir: true }));
+  .concat(glob.sync(`${PATHS.src}/**/*.js`, { nodir: true }))
+  .concat(glob.sync(`${PATHS.content}/**/*.js`, { nodir: true }))
+  .concat(glob.sync(`${PATHS.content}/**/*.html`, { nodir: true }));
 
 // Purge all unused css selectors
 const purgecss = require("@fullhuman/postcss-purgecss")({
