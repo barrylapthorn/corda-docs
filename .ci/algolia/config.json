@@ -1,0 +1,17 @@
+{
+    "index": "docs.corda.net",
+    "facets": [
+        "language",
+        "project",
+        "version"
+    ],
+    "attributesToRetrieve": [
+        "anchor",
+        "content",
+        "hierarchy",
+        "url",
+        "language",
+        "project",
+        "version"
+    ]
+}

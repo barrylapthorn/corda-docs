@@ -24,14 +24,15 @@ def _setup_logging():
     LOG.addHandler(ch)
 
 
-def process(app_id, write_key, index_name, facets):
+def process(app_id, write_key, index_name, facets, attributes_to_retrieve):
     LOG.info(f"Setting facets for searching on index {index_name}")
     client = SearchClient.create(app_id, write_key)
     index = client.init_index(index_name)
 
     # https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/how-to/declaring-attributes-for-faceting/
     index.set_settings({
-        'attributesForFaceting': facets
+        'attributesForFaceting': facets,
+        'attributesToRetrieve': attributes_to_retrieve
     })
     LOG.info(f"Setting facets for searching on index {index_name} finished")
 
@@ -52,7 +53,7 @@ def main():
         sys.exit(1)
 
     cfg = json.loads("\n".join(open(args.config, 'r').readlines()))
-    process(args.appId, args.writeKey, cfg["index"], cfg["facets"])
+    process(args.appId, args.writeKey, cfg["index"], cfg["facets"], cfg["attributesToRetrieve"])
 
 
 if __name__ == '__main__':

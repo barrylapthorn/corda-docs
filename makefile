@@ -77,7 +77,7 @@ build-algolia-image:
 
 crawl: build-algolia-image ## Start a crawl of docs.corda.net and upload to algolia, then set the searchable facets
 	.ci/algolia/crawl.sh $(ALGOLIA_APPLICATION_ID) $(ALGOLIA_API_ADMIN_KEY)
-	$(DOCKER_RUN) -u $$(id -u):$$(id -g) $(ALGOLIA_IMAGE) .ci/algolia/configure_index_by_rest.py .ci/algolia/facets.json $(ALGOLIA_APPLICATION_ID) $(ALGOLIA_API_ADMIN_KEY)
+	$(DOCKER_RUN) -u $$(id -u):$$(id -g) $(ALGOLIA_IMAGE) .ci/algolia/configure_index_by_rest.py .ci/algolia/config.json $(ALGOLIA_APPLICATION_ID) $(ALGOLIA_API_ADMIN_KEY)
 
 #######################################################################################################################
 # Build checks
