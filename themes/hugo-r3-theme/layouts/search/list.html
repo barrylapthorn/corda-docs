@@ -1,16 +1,18 @@
 {{ define "main" }}
-<h1>Search Corda Documentation</h1>
-
-
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch.min.css">
-
-<!-- You can also add this theme to add a Bootstrap-like appearance to your widgets. -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch-theme-algolia.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css" integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossorigin="anonymous">
-
-<div id="r3-react-target"></div>
-<script src="/js/siteSearch.js"></script>
-
 {{- .Content -}}
+<div>
+    <h1 class="text-2xl">Search Corda Documentation</h1>
+
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch.min.css">
+
+    <!-- You can also add this theme to add a Bootstrap-like appearance to your widgets. -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch-theme-algolia.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css"
+        integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossorigin="anonymous">
+
+    <div id="r3-react-target"></div>
+    <script src="/js/siteSearch.js"></script>
+</div>
 {{ end }}

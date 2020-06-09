@@ -13,12 +13,14 @@ export default class Hit extends React.Component {
         if (this.props.hit.hierarchy.lvl1 !== null) {
             lvl1 = <p className="text-sm">{this.props.hit.hierarchy.lvl1}</p>;
         }
+        let lvl0 = <p className="text-base">{this.props.hit.hierarchy.lvl0}</p>;
         return (
+
             <a href="{this.props.hit.url}">
             <div>
-                <p className="text-base">{this.props.hit.hierarchy.lvl0}</p>
-                {lvl1}
                 <Section project={this.props.hit.project} version={this.props.hit.version} />
+                {lvl0}
+                {lvl1}
             </div>
             </a>
         );
