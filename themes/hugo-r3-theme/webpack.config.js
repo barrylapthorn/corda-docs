@@ -3,7 +3,8 @@ const path = require("path");
 module.exports = [{
     entry: {
         app: ["./scripts", "./styles/scss/main.scss"],
-        vendor: "./scripts/vendor"
+        vendor: "./scripts/vendor",
+        siteSearch: "./scripts/siteSearch"
     },
     output: {
         path: path.resolve(__dirname, "./static/"),
@@ -11,26 +12,32 @@ module.exports = [{
     },
     devtool: "source-map",
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ["babel-loader", "eslint-loader"]
+                use: [
+                    {
+                        loader: 'babel-loader'
+                    },
+                    "eslint-loader"
+                ]
             },
             {
                 test: /\.scss$/,
                 use: [{
-                        loader: "file-loader",
-                        options: {
-                            name: "css/[name].css"
-                        }
-                    },
+                    loader: "file-loader",
+                    options: {
+                        name: "css/[name].css"
+                    }
+                },
                     "extract-loader",
-                    {
-                        loader: "css-loader",
-                        options: {
-                            url: false
-                        }
-                    },
+                {
+                    loader: "css-loader",
+                    options: {
+                        url: false
+                    }
+                },
                     "sass-loader"
                 ]
             },

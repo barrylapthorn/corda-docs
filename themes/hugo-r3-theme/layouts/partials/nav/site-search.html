@@ -1,0 +1,7 @@
+{{- if .Site.Params.github -}}
+<li class="nav-item r3-o-navbar__nav-item">
+    <a href="{{ ref . "search" }}" name="site search" alt="site search" aria-label="site search">
+        {{- partial "svg/search.svg" . -}}
+    </a>
+</li>
+{{- end -}}

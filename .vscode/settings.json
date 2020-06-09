@@ -18,5 +18,8 @@
         "**/node_modules/**": true,
         "**/repos/**": true
     },
-    "python.testing.promptToConfigure": false
+    "python.testing.promptToConfigure": false,
+    "cSpell.words": [
+        "algolia"
+    ]
 }

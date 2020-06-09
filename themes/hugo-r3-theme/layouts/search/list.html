@@ -1,7 +1,6 @@
 {{ define "main" }}
 <h1>Search Corda Documentation</h1>
 
-<input type="search" id="searchbox" />
 
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch.min.css">
@@ -9,10 +8,18 @@
 <!-- You can also add this theme to add a Bootstrap-like appearance to your widgets. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch-theme-algolia.min.css">
 
-<div id="hits"></div>
-<div id="pagination"></div>
-
+<div id="r3-react-target"></div>
+<div style="margin: 0.5rem">
+    <input type="search" id="searchbox"  />
+</div>
+<div style="margin: 0.5rem">
+    <div id="pagination"></div>
+</div>
+<div style="margin: 0.5rem">
+    <div id="hits"></div>
+</div>
 <script src="/site-search.js"></script>
+<script src="/js/siteSearch.js"></script>
 
 {{- .Content -}}
 {{ end }}
