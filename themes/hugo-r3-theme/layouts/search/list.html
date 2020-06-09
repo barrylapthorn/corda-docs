@@ -7,8 +7,12 @@
 
 <!-- You can also add this theme to add a Bootstrap-like appearance to your widgets. -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.1/dist/instantsearch-theme-algolia.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css" integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossorigin="anonymous">
 
 <div id="r3-react-target"></div>
+<script src="/js/siteSearch.js"></script>
+
+
 <div style="margin: 0.5rem">
     <input type="search" id="searchbox"  />
 </div>
@@ -19,7 +23,6 @@
     <div id="hits"></div>
 </div>
 <script src="/site-search.js"></script>
-<script src="/js/siteSearch.js"></script>
 
 {{- .Content -}}
 {{ end }}
