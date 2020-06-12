@@ -24,7 +24,7 @@ let keyword_to_icon = {
     "network": "network.png",
     "testnet": "network.png",
     "toolkit": "toolkit.png",
-    "finance": "capitalmarkets.png",
+    "finance": "capitalmarkets.png"
 };
 
 /// This is returns the a hit from the search results.
@@ -81,8 +81,6 @@ export default class Hit extends React.Component {
     }
 
     render() {
-        console.log(this.props);
-
         return (
             <div className="d-flex flex-row">
                 <div>
