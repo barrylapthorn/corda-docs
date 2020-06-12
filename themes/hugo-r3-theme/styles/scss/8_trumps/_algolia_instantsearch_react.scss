@@ -1,0 +1,51 @@
+// .ais-Hits {
+// }
+// .ais-Hits-list {
+// }
+
+// Algolia instant search React component styling
+
+.ais-Hits-item {
+    @extend .shadow-md;
+    @extend .rounded-md;
+    width: 100%;
+    border: 1px $grey-100 solid;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// R3 search result styling
+
+.r3-search-title {
+    @extend .text-lg;
+    @extend .font-bold;
+    color: $red-500;
+}
+
+.r3-search-thumbnail {
+    
+    height: 6rem;
+    padding-right: 1rem;
+    float: left;
+}
+
+.r3-search-label {
+    border: 1px $grey-500;
+    @extend .rounded-md;
+    @extend .text-xs;
+    padding: 0.5rem;
+    background-color: $grey-100;
+}
+
+.r3-search-read-more {
+    @extend .text-base;
+    width: 70rem;
+    /* BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.r3-search-read-more p {
+    text-overflow: ellipsis;
+}

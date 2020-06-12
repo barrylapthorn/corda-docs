@@ -6,6 +6,7 @@
         "firefox-devtools.vscode-firefox-debug",
         "redhat.vscode-yaml",
         "bungcip.better-toml",
-        "davidanson.vscode-markdownlint"
+        "davidanson.vscode-markdownlint",
+        "sibiraj-s.vscode-scss-formatter"
     ]
 }

@@ -24,7 +24,7 @@ Project.propTypes = {
 export default class Section extends React.Component {
     render() {
         return (
-            <span className="text-xs"><Project project={this.props.project} /> {this.props.version}</span>
+            <span><Project project={this.props.project} /> {this.props.version}</span>
         );
     }
 }

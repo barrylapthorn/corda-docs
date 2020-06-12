@@ -8,6 +8,8 @@
 @import "4_base/font";
 @import "4_base/typography";
 @import "4_base/links";
+@import "4_base/shadows";
+@import "4_base/rounded";
 
 @import "5_objects/wrappers";
 
@@ -35,3 +37,5 @@
 @import "7_utilities/anchor";
 @import "7_utilities/cookies-consent";
 @import "7_utilities/tableofcontents";
+
+@import "8_trumps/algolia_instantsearch_react";
