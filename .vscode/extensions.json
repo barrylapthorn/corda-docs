@@ -6,6 +6,8 @@
         "firefox-devtools.vscode-firefox-debug",
         "redhat.vscode-yaml",
         "bungcip.better-toml",
-        "davidanson.vscode-markdownlint"
+        "davidanson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        "bradlc.vscode-tailwindcss"
     ]
 }

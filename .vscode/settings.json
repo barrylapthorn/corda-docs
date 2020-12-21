@@ -18,5 +18,10 @@
         "**/node_modules/**": true,
         "**/repos/**": true
     },
-    "python.testing.promptToConfigure": false
+    "python.testing.promptToConfigure": false,
+    "css.validate": false, // Disable css built-in lint
+    "stylelint.enable": true,
+    "cSpell.words": [
+        "tailwindcss"
+    ] // Enable sytlelint
 }

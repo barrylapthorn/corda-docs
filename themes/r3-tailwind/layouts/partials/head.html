@@ -1,0 +1,11 @@
+<head>
+    <meta name="description" content="{{ .Param "description" }}">
+    {{- if .IsTranslated }}
+    {{- range .Translations -}}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+    {{- end -}}
+    {{ end }}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    {{- partial "head/styles.html" . -}}
+    {{- partial "head/javascript.html" . -}}
+</head>

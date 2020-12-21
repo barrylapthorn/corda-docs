@@ -6,7 +6,7 @@ baseURL = "http://localhost:1313"
 title = "Corda Documentation"
 
 # Of course...
-theme = "hugo-r3-theme"
+theme = "r3-tailwind"
 
 # i18n
 defaultContentLanguage = "en"

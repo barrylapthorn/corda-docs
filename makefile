@@ -1,5 +1,8 @@
 #  Prefer long args to short args for readability
 ROOT_DIR          := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+THIS_DIR          := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+THEME_DIR         := $(realpath $(THIS_DIR)/themes/r3-tailwind)
+
 DOCKER             = docker
 DOCKER_RUN         = $(DOCKER) run --rm --volume $(ROOT_DIR):/src $(DOCKER_BUILD_ARGS)
 HUGO_VERSION       = 0.65.3
@@ -27,6 +30,9 @@ local-build: ## Build the site (once only into public/) or just use 'hugo' direc
 
 local-serve-and-edit:  ## Build and serve hugo with a click-to-edit link using the config.dev.toml file
 	HUGO_PARAMS_SITEROOT=$(ROOT_DIR) hugo --config config.toml,config.dev.toml serve -D -F --disableFastRender
+
+build: ## Build the (prod) site
+	hugo --minify
 
 #######################################################################################################################
 # Docker tasks - run hugo in docker
@@ -84,3 +90,21 @@ crawl: build-algolia-image ## Start a crawl of docs.corda.net and upload to algo
 
 linkchecker: prod-docker-image ## Check all links are valid
 	.ci/checks/linkchecker.sh $(PROD_IMAGE)
+
+################################################################################
+#  New
+################################################################################
+
+install:  ## (re)install the hugo-earth-theme
+	make -f $(THEME_DIR)/makefile install
+
+prod-serve: install ## Serve a prod version of the site
+	make -f $(THEME_DIR)/makefile site-prod-serve
+	#export NODE_ENV=production && hugo -e production serve --minify
+
+prod: install ## Build a prod version of the site
+	make -f $(THEME_DIR)/makefile site-prod
+	# export NODE_ENV=production && hugo -e production --minify
+
+serve: install ## Serve the dev version of the site
+	make -f $(THEME_DIR)/makefile site-dev-serve

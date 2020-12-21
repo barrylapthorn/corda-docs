@@ -1,0 +1,6 @@
+{{- $js := resources.Get "js/index.js" -}}
+{{- $js = $js | js.Build -}}
+{{- if hugo.IsProduction -}}
+{{- $js = $js | minify | fingerprint | resources.PostProcess -}}
+{{- end -}}
+<script src="{{ $js.RelPermalink }}"></script>

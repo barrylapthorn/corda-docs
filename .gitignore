@@ -662,3 +662,11 @@ repos/**
 
 **/xml/**
 repos/
+
+#  These are copied into this folder by the make task
+package.json
+package-lock.json
+tailwind.config.js
+postcss.config.js
+
+**/node_modules/

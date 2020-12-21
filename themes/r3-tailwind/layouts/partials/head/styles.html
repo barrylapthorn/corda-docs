@@ -1,0 +1,6 @@
+{{- $css := resources.Get "css/main.css" -}}
+{{- $css = $css | resources.PostCSS -}}
+{{- if hugo.IsProduction -}}
+{{- $css = $css | resources.Minify | fingerprint | resources.PostProcess -}}
+{{- end }}
+<link href="{{ $css.Permalink }}" rel="stylesheet" />

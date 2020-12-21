@@ -1,0 +1,20 @@
+<header class="flex flew-row">
+    <div class="flex-none w-16 h-16">
+        <a class="" href="{{- .Site.Home.Permalink -}}">
+            <img src="/corda.png" class="" alt="corda" aria-label="Corda" />
+            <span class="">{{- .Site.Title -}}</span>
+        </a>
+    </div>
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <ul class="navbar-nav ml-md-auto">
+            <li class="inline">
+                <a class="nav-link" href="#top">Enterprise</a>
+            </li>
+            <li class="inline active">
+                <a class="nav-link" href="http://www.r3.com">R3 <span class="sr-only">(current)</span></a>
+            </li>
+            {{ partial "nav/version.html" . }} {{ partial "nav/lang.html" . }}
+        </ul>
+    </div>
+</header>

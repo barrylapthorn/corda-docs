@@ -1,0 +1,46 @@
+@tailwind base;
+
+@tailwind components;
+
+main p {
+    @apply mt-4;
+}
+
+main ul {
+    @apply list-disc block;
+    @apply ml-4 mt-2;
+}
+
+main a {
+    @apply text-blue-500 underline;
+}
+
+main a:hover {
+    @apply text-blue-800;
+}
+
+main pre {
+    @apply rounded p-4 mt-4 mb-4 shadow-lg;
+}
+
+article {
+    @apply font-mono;
+}
+
+article h2 {
+    @apply py-2 font-semibold font-mono uppercase text-xl;
+}
+
+article h3 {
+    @apply py-2 font-semibold font-mono uppercase text-lg;
+}
+
+article h4 {
+    @apply py-2 font-semibold font-mono uppercase text-base;
+}
+
+p {
+    @apply dark:text-gray-200 text-gray-800;
+}
+
+@tailwind utilities;
