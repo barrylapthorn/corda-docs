@@ -1,7 +1,8 @@
 <div>
-  <nav class="bg-gray-800 text-gray-200">
+  <nav class="bg-gray-800 text-gray-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
+        <!-- Left hand side-->
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <a class="" href="{{- .Site.Home.Permalink -}}">
@@ -24,15 +25,19 @@
             >
           </div>
         </div>
+        <!-- right hand side -->
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            {{ partial "nav/edit-page-from-browser.html" . }}
+            {{ partial "nav/stackoverflow.html" . }}
+            {{ partial "nav/github.html" . }}
+            {{ partial "nav/twitter.html" . }}
+            {{ partial "nav/slack.html" . }}
+            {{ partial "nav/r3.html" . }}
+            {{ partial "nav/lang.html" . }}
+          </div>
+        </div>
       </div>
     </div>
-
-      {{ partial "nav/edit-page-from-browser.html" . }}
-      {{ partial "nav/stackoverflow.html" . }}
-      {{ partial "nav/github.html" . }}
-      {{ partial "nav/twitter.html" . }}
-      {{ partial "nav/slack.html" . }}
-      {{ partial "nav/r3.html" . }}
-      {{ partial "nav/lang.html" . }}
   </nav>
 </div>
