@@ -1,5 +1,5 @@
 {{- if eq .Site.Params.editor "vscode" -}}
-  <li class="nav-item r3-o-navbar__nav-item">
+    <div class="ml-4">
     {{ if and .Site.Params.siteroot .File }}
       <a
         href="vscode://file/{{ .Site.Params.SiteRoot }}/content/{{ .Site.Language.Lang }}/{{ .File.Path }}"
@@ -62,7 +62,7 @@
       {{ else }}
       <a href="#" name="atom" alt="atom" aria-label="atom"> See readme </a>
     {{ end }}
-  </li>
+    </div>
 {{- end -}}
 <!--{{- if eq .Site.Params.editor "idea" -}}-->
 <!--<li class="nav-item r3-o-navbar__nav-item">-->

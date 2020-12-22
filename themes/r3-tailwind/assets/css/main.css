@@ -1,50 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 
 @tailwind components;
 
 main p {
-    @apply mt-4;
+  @apply mt-4;
 }
 
 main ul {
-    @apply list-disc block;
-    @apply ml-4 mt-2;
+  @apply list-disc block;
+  @apply ml-4 mt-2;
 }
 
 main a {
-    @apply text-r3-red;
+  @apply text-r3-red;
 }
 
 main a:hover {
-    @apply text-r3-red underline;
+  @apply text-r3-red underline;
 }
 
 main pre {
-    @apply rounded p-4 mt-4 mb-4 shadow-lg overflow-auto;
+  @apply rounded p-4 mt-4 mb-4 shadow-lg overflow-auto;
 }
 
 .r3-content {
-    @apply font-sans;
+  @apply font-poppins;
+}
+.r3-content p {
+  @apply mt-4;
 }
 
 .r3-content h1 {
-    @apply py-3 font-extrabold text-2xl;
+  @apply py-3 font-semibold text-2xl;
 }
 
 .r3-content h2 {
-    @apply py-3 font-semibold text-xl;
+  @apply py-3 font-semibold text-xl;
 }
 
 .r3-content h3 {
-    @apply py-3 font-semibold text-lg;
+  @apply py-3 font-semibold text-lg;
 }
 
 .r3-content h4 {
-    @apply py-3 font-semibold text-base;
+  @apply py-3 font-semibold text-base;
 }
 
 p {
-    @apply text-gray-800;
+  @apply text-gray-800;
 }
 
 @tailwind utilities;
