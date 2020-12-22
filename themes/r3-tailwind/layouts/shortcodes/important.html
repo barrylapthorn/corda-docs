@@ -1,7 +1,4 @@
-<div class="alert alert-primary" role="alert">
-  <h6>
-    <span data-feather="alert-circle"></span>
-    Important
-  </h6>
-  {{- .Inner | markdownify -}}
+<div class="alert alert-primary r3-o-important" role="alert">
+<span class="r3-o-icon-important"></span>
+{{- .Inner | .Page.RenderString -}}
 </div>

@@ -1,18 +1,16 @@
-import { setTheme, setThemeOnLoad } from 'js/dark';
-import { addAnchors } from 'js/add-anchors';
+import { setTheme, setThemeOnLoad } from "js/dark";
+import { addAnchors } from "js/add-anchors";
+import { activateListeners } from "js/toggle-hidden-menu";
+import { activateTabs } from "js/activate-tabs";
 
-const load = () => {
-  setThemeOnLoad();
-  const e = document.getElementById('dark-toggle');
+document.addEventListener("DOMContentLoaded", function (event) {
+    setThemeOnLoad();
+    const e = document.getElementById("dark-toggle");
 
-  if (e) e.onclick = setTheme;
-  addAnchors();
+    if (e) e.onclick = setTheme;
 
-  console.log("LOADED");
-};
-
-document.addEventListener('DOMContentLoaded', function(event) {
-  addAnchors();
+    addAnchors();
+    activateListeners();
+    activateTabs();
+    console.log("LOADED");
 });
-
-window.onload = load;

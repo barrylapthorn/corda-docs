@@ -73,6 +73,6 @@ site-prod: install ## Build prod version of the site
 
 site-dev-serve: install
 	cd $(SITE_DIR)
-	hugo serve
+	HUGO_PARAMS_SITEROOT=$(SITE_DIR) hugo serve --config config.toml,config.dev.toml server
 
 # hugo serve -D -F --disableFastRender

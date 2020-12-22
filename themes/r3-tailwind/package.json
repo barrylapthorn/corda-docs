@@ -31,7 +31,8 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
-    "anchor-js": "^4.3.0"
+    "anchor-js": "^4.3.0",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1"
   }
 }

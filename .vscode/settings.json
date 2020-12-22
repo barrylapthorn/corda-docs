@@ -30,6 +30,7 @@
     "css.validate": false, // Disable css built-in lint
     "stylelint.enable": true,
     "cSpell.words": [
+        "anchorify",
         "tailwindcss"
     ] // Enable sytlelint
 }

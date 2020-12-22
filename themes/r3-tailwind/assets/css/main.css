@@ -28,8 +28,18 @@ main pre {
 .r3-content {
   @apply font-poppins;
 }
+
 .r3-content p {
-  @apply mt-4;
+  @apply mt-4 text-justify;
+}
+
+/* .r3-content code:not(.class)
+{
+  @apply rounded-sm bg-gray-300 border-gray-700 p-1;
+} */
+
+.r3-content li {
+  @apply text-justify;
 }
 
 .r3-content h1 {
@@ -45,6 +55,14 @@ main pre {
 }
 
 .r3-content h4 {
+  @apply py-3 font-semibold text-base;
+}
+
+.r3-content h5 {
+  @apply py-3 font-semibold text-base;
+}
+
+.r3-content h6 {
   @apply py-3 font-semibold text-base;
 }
 

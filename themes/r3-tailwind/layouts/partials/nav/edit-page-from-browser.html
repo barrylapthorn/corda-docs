@@ -30,10 +30,10 @@
         See readme
       </a>
     {{ end }}
-  </li>
+    </div>
 {{- end -}}
 {{- if eq .Site.Params.editor "atom" -}}
-  <li class="nav-item r3-o-navbar__nav-item">
+  <div class="ml-4">
     {{ if and .Site.Params.siteroot .File }}
       <a
         href="atom://open?url=file://{{ .Site.Params.SiteRoot }}/content/{{ .Site.Language.Lang }}/{{ .File.Path }}"
