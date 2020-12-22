@@ -1,20 +1,38 @@
-<header class="flex flew-row">
-    <div class="flex-none w-16 h-16">
-        <a class="" href="{{- .Site.Home.Permalink -}}">
-            <img src="/corda.png" class="" alt="corda" aria-label="Corda" />
-            <span class="">{{- .Site.Title -}}</span>
-        </a>
+<div>
+  <nav class="bg-gray-800 text-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <a class="" href="{{- .Site.Home.Permalink -}}">
+              <img
+                src="/images/png/corda.png"
+                class="w-12 h-12 inline-block"
+                alt="corda"
+                aria-label="Corda"
+              />
+              <!-- <span class="">{{- .Site.Title -}}</span> -->
+            </a>
+          </div>
+
+          <div class="ml-5 flex items-baseline space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a
+              href="#"
+              class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+              >Enterprise</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="flex-grow"></div>
-    <div class="flex-none">
-        <ul class="navbar-nav ml-md-auto">
-            <li class="inline">
-                <a class="nav-link" href="#top">Enterprise</a>
-            </li>
-            <li class="inline active">
-                <a class="nav-link" href="http://www.r3.com">R3 <span class="sr-only">(current)</span></a>
-            </li>
-            {{ partial "nav/version.html" . }} {{ partial "nav/lang.html" . }}
-        </ul>
-    </div>
-</header>
+
+      {{ partial "nav/edit-page-from-browser.html" . }}
+      {{ partial "nav/stackoverflow.html" . }}
+      {{ partial "nav/github.html" . }}
+      {{ partial "nav/twitter.html" . }}
+      {{ partial "nav/slack.html" . }}
+      {{ partial "nav/r3.html" . }}
+      {{ partial "nav/lang.html" . }}
+  </nav>
+</div>

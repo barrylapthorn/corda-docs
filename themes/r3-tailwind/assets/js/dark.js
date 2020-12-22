@@ -3,15 +3,15 @@
 function setThemeDark() {
   localStorage.theme = 'dark'
   document.querySelector('html').classList.add('dark')
-  document.getElementById('dark').style.display = 'none';
-  document.getElementById('light').style.display = 'block';
+//   document.getElementById('dark').style.display = 'none';
+//   document.getElementById('light').style.display = 'block';
 }
 
 function setThemeLight() {
   localStorage.theme = 'light'
   document.querySelector('html').classList.remove('dark')
-  document.getElementById('dark').style.display = 'block';
-  document.getElementById('light').style.display = 'none';
+//   document.getElementById('dark').style.display = 'block';
+//   document.getElementById('light').style.display = 'none';
 }
 
 function toggleTheme(toggle) {

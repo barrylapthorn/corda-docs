@@ -8,6 +8,7 @@
         "bungcip.better-toml",
         "davidanson.vscode-markdownlint",
         "editorconfig.editorconfig",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
     ]
 }

@@ -1,11 +1,10 @@
 <head>
-    <meta name="description" content="{{ .Param "description" }}">
-    {{- if .IsTranslated }}
-    {{- range .Translations -}}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
-    {{- end -}}
-    {{ end }}
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    {{- partial "head/styles.html" . -}}
-    {{- partial "head/javascript.html" . -}}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    {{ partial "meta.html" . }}
+    {{ partial "links.html" . }}
+    {{ partial "head/styles.html" . }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css" type="text/css" />
+    {{ if eq .Kind "home"}}{{ partial "homehead.html" .}}{{ end }}
 </head>

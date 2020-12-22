@@ -3,8 +3,12 @@ import { addAnchors } from 'js/add-anchors';
 
 const load = () => {
   setThemeOnLoad();
-  document.getElementById('dark-toggle').onclick = setTheme;
+  const e = document.getElementById('dark-toggle');
+
+  if (e) e.onclick = setTheme;
   addAnchors();
+
+  console.log("LOADED");
 };
 
 document.addEventListener('DOMContentLoaded', function(event) {
