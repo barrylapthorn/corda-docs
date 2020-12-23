@@ -670,3 +670,5 @@ tailwind.config.js
 postcss.config.js
 
 **/node_modules/
+# Used for calculating what css classes tailwind must retain in prod
+hugo_stats.json
