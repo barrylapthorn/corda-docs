@@ -4,13 +4,16 @@
 {{ $tabs := .Scratch.Get "tabs" }}
 {{ if .Inner }}
   {{/* We don't use the inner content, but Hugo will complain if we don't reference it. */}}{{ end }}
+
 <div class="r3-o-tabs" id="{{ $tab_set_id }}">
   {{/* tabs activated by javascript */}}
-  <ul class="nav nav-tabs">
+  <ul class="mx-0 my-2">
     {{ range $i, $e := $tabs }}
       {{ $tab_name := trim .name " " }}
       {{ $id := printf "%s-%s" $tab_set_id $tab_name }}
-      <li class="nav-item inline-block px-2 border-solid border-4 border-gray-800">
+      <li
+        class="nav-item inline-block px-3 rounded-lg border-solid border-4 border-gray-500"
+      >
         <div class="">
           <a href="#{{ $id }}" data-toggle="tab">{{ trim .name " " }}</a>
         </div>

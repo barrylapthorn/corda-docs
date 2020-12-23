@@ -8,12 +8,17 @@ function activateTabSet(e) {
   let id = "#" + e.id;
   var defaultTabId = id + "-" + DEFAULT_TAB_NAME;
   console.log("Default = " + defaultTabId);
+  console.log("id " + e.id);
 
-  var $tabSet = $(e.id);
+  var $tabSet = $(id);
+  console.log($tabSet);
+
   var $tabs = $(id + " ul li");
 
   // Hide all code panes - we unhide one of them later
-  $tabSet.find("tab-pane").each(function (index) {
+  var $pane = $tabSet.find(".tab-pane");
+
+  $pane.each(function (index) {
     $(this).addClass("hidden");
   });
 
@@ -23,12 +28,11 @@ function activateTabSet(e) {
     var tabPaneId = id + "-" + tabName;
 
     // add on click handler
-    $tabLink.on("click", function () {
+    $tabLink.on("click", function (event) {
+      // we don't want the browser to scroll
+      event.preventDefault();
       // ensure all panes are hidden
-      $tabSet.find("tab-pane").each(function (index) {
-        console.log("Hiding ");
-        console.log(this);
-
+      $tabSet.find(".tab-content .tab-pane").each(function (index) {
         $(this).addClass("hidden");
       });
       // except us when we're clicked.
