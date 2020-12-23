@@ -25,6 +25,32 @@ main pre {
   @apply rounded px-2 pb-2 mt-0 mb-4 shadow-lg overflow-auto;
 }
 
+main table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+main thead {
+  @apply bg-gray-50;
+}
+
+main thead tr th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+main table tbody {
+  @apply bg-white divide-y divide-gray-200 py-4;
+}
+
+main table tr:nth-child(even) td {
+  @apply px-4 py-2 whitespace-nowrap bg-gray-100;
+}
+main table tr:nth-child(odd) td {
+  @apply px-4 py-2 whitespace-nowrap;
+}
+
+/* main table tr:hover {
+    @apply bg-gray-200;
+} */
 .r3-content {
   @apply font-poppins;
 }
