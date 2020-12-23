@@ -4,13 +4,18 @@
 
 @tailwind components;
 
-main p {
-  @apply mt-4;
-}
-
 main ul {
   @apply list-disc block;
   @apply ml-4 mt-2;
+}
+
+main ol {
+  @apply list-decimal block;
+  @apply ml-4 mt-2;
+}
+
+main li {
+    @apply mb-2;
 }
 
 main a {
@@ -56,7 +61,7 @@ main table tr:nth-child(odd) td {
 }
 
 .r3-content p {
-  @apply mt-4 text-justify;
+  @apply mb-4 text-justify;
 }
 
 /* .r3-content code:not(.class)
