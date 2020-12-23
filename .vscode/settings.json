@@ -30,7 +30,14 @@
     "css.validate": false, // Disable css built-in lint
     "stylelint.enable": true,
     "cSpell.words": [
+        "Kubernetes",
         "anchorify",
-        "tailwindcss"
+        "bankinabox",
+        "cenm",
+        "corda",
+        "optimised",
+        "refapps",
+        "tailwindcss",
+        "walkthrough"
     ] // Enable sytlelint
 }
