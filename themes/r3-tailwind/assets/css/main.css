@@ -22,7 +22,7 @@ main a:hover {
 }
 
 main pre {
-  @apply rounded p-4 mt-0 mb-4 shadow-lg overflow-auto;
+  @apply rounded px-2 pb-2 mt-0 mb-4 shadow-lg overflow-auto;
 }
 
 .r3-content {

@@ -7,7 +7,7 @@
 
 <div class="r3-o-tabs" id="{{ $tab_set_id }}">
   {{/* tabs activated by javascript */}}
-  <ul class="mx-0 my-2">
+  <ul class="mx-0 mt-2">
     {{ range $i, $e := $tabs }}
       {{ $tab_name := trim .name " " }}
       {{ $id := printf "%s-%s" $tab_set_id $tab_name }}
