@@ -34,6 +34,10 @@ pygmentsStyle = "emacs"
 # https://gohugo.io/variables/git/
 enableGitInfo = true
 
+# So that we can purge css
+[build]
+writeStats = true
+
 # GA was added here: /themes/hugo-r3-theme/scripts/vendor/googleanalytics.js
 # We are NOT using the built-in Hugo functionality commented out below
 # https://gohugo.io/templates/internal/#google-analytics

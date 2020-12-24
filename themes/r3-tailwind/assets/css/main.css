@@ -15,7 +15,7 @@ main ol {
 }
 
 main li {
-    @apply mb-2;
+  @apply mb-2;
 }
 
 main a {
@@ -99,6 +99,22 @@ main table tr:nth-child(odd) td {
 
 p {
   @apply text-gray-800;
+}
+
+.api {
+  @apply text-sm text-gray-500;
+}
+
+a {
+  @apply text-r3-red;
+}
+
+header a {
+  @apply text-gray-100;
+}
+
+a:hover {
+  @apply underline;
 }
 
 @tailwind utilities;

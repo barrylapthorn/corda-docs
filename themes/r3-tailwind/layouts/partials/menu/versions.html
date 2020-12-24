@@ -3,28 +3,55 @@
 {{/* now get the current section version we're in */}}
 {{ $currentVersion := "Versions" }}
 {{/* Identify whether we're 'within' a section or not and store it  */}}
-{{ $sectionMenuForThisPage := or .Parent.Page.Params.section_menu .Page.Params.section_menu}}
+{{ $sectionMenuForThisPage := or .Parent.Page.Params.section_menu .Page.Params.section_menu }}
 {{ range .Site.Menus.versions }}
-{{ if eq .Page.Params.section_menu $sectionMenuForThisPage }}{{$currentVersion = .Name}}{{ end }}
+  {{ if eq .Page.Params.section_menu $sectionMenuForThisPage }}
+    {{ $currentVersion = .Name }}{{ end }}
+
 {{ end }}
 {{/* We know know whether we're in 'corda-os-4.4' or not ('Versions') */}}
 
-
 <div class="r3-o-dropdown dropdown">
-    <button class="btn dropdown-toggle" type="button" id="versionDropDown" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        {{ $currentVersion }}
-        <img src="/images/png/version.png" alt="version" />
-    </button>
-    <div class="dropdown-menu">
-        {{ range .Site.Menus.versions.ByWeight }}
-        {{/* set a class against the active entry */}}
-        {{ $active:=false}}
-        {{ if eq .Page.Params.section_menu $sectionMenuForThisPage }}{{$active = true}}{{ end }}
-        <a href="{{ .URL }}" class="small dropdown-item{{if $active}} active{{end}}">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-        </a>
-        {{ end }}
-    </div>
+  <button
+    class="btn dropdown-toggle"
+    type="button"
+    id="versionDropDown"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    {{ $currentVersion }}
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-git-branch h-4 w-auto"
+    >
+      <line x1="6" y1="3" x2="6" y2="15"></line>
+      <circle cx="18" cy="6" r="3"></circle>
+      <circle cx="6" cy="18" r="3"></circle>
+      <path d="M18 9a9 9 0 0 1-9 9"></path>
+    </svg>
+  </button>
+  <div class="dropdown-menu">
+    {{ range .Site.Menus.versions.ByWeight }}
+      {{/* set a class against the active entry */}}
+      {{ $active:=false }}
+      {{ if eq .Page.Params.section_menu $sectionMenuForThisPage }}
+        {{ $active = true }}{{ end }}
+
+      <a
+        href="{{ .URL }}"
+        class="small dropdown-item{{ if $active }} active{{ end }}"
+      >
+        {{ .Pre }}
+        <span>{{ .Name }}</span>
+      </a>
+    {{ end }}
+  </div>
 </div>

@@ -1,12 +1,7 @@
 {{ define "main" }}
 <main role="main">
-    {{- partial "breadcrumb.html" . -}}
-    {{- partial "page-next-prev.html" . -}}
-    <div class="align-items-center">
-        {{/* <h1 class="h2">{{- .Page.Title -}}</h1> */}}
-    </div>
-    <div class="r3-content">
-        {{- .Content -}}
-    </div>
+{{- .Content -}}
 </main>
 {{ end }}
+
+<!-- THIS IS THE DEFAULT PAGE - for a 'docs' page see the 'docs' folder -->
