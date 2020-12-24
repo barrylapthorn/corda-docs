@@ -1,47 +1,36 @@
 <!DOCTYPE html>
-<html{{ with .Site.LanguageCode }}lang="{{ . }}"{{ end }}>
-    {{ partial "head.html" . }}
-    <body class="font-poppins">
-        <noscript>You need to enable javascript for this site</noscript>
-        {{- partial "cookie-banner.html" . -}}
-        {{- partial "header.html" . -}}
-        <div class="container-fluid r3-o-container-fluid">
-            <div class="row position-relative">
-                {{- partial "breadcrumb.html" . -}}
-            </div>
-            <div class="row position-relative">
-                {{- partial "nav.html" . -}}
-                <div class="r3-o-wrapper-main col-12 col-xl-9">
-                    {{- partial "sidebar.html" . -}}
-                    <div id="content" class="d-flex flex">
-                        {{ $element := .Page.TableOfContents }}
-                        {{ if eq $element `<nav id="TableOfContents"></nav>`}}
-                            <main role="main">
-                                <article class="r3-content">
-                                    {{- block "main" . -}}{{- end -}}
-                                    {{ partial "menu/prev-current-next.html" . }}
-                                </article>
-                            </main>
-                        {{ else }}
-                            <main role="main">
-                                <article class="r3-content">
-                                    {{- block "main" . -}}{{- end -}}
-                                    {{ partial "menu/prev-current-next.html" . }}
-                                </article>
-                            </main>
-                            <aside class="d-none d-xl-flex">
-                                {{- partial "toc.html" . }}
-                            </aside>
-                        {{ end }}
-                    </div>
-                    {{- partial "footer.html" . -}}
-                    {{- partial "git.html" . -}}
-
-                </div>
-            </div>
+<html {{ with .Site.LanguageCode }}lang="{{ . }}"{{ end }}>
+  {{ partial "head.html" . }}
+  <body class="font-poppins">
+    <noscript>You need to enable javascript for this site</noscript>
+    {{- partial "cookie-banner.html" . -}}
+    {{- partial "header.html" . -}}
+    <div class="grid grid-cols-12">
+      <div class="hidden lg:block lg:col-span-2">
+        <div class="flex flex-col">
+          {{- partial "nav.html" . -}}
+          {{- partial "sidebar.html" . -}}
         </div>
-        {{ partial "globals.html" .}}
-
-        {{- partial "scripts.html" . -}}
-    </body>
+      </div>
+      <div class="col-span-12 lg:col-span-10">
+        <main role="main">
+          <article class="r3-content px-4">
+            {{- partial "breadcrumb.html" . -}}
+            {{- block "main" . -}}{{- end -}}
+            {{ partial "menu/prev-current-next.html" . }}
+          </article>
+        </main>
+        <aside class="hidden lg:flex">
+          {{- partial "toc.html" . }}
+        </aside>
+      </div>
+      <div class="hidden md:block md:col-span-2"></div>
+      <div class="col-span-12 lg:col-span-10">
+        {{- partial "footer.html" . -}}
+        {{- partial "git.html" . -}}
+      </div>
+    </div>
+    {{ partial "globals.html" . }}
+    {{- partial "scripts.html" . -}}
+  </body>
 </html>

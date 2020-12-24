@@ -1,5 +1,5 @@
 <div>
-<ol class="ml-0 text-sm text-gray-500">
+<ol id="breadcrumbs" class="ml-0 text-xs text-gray-500">
     {{- template "breadcrumbnav" (dict "p1" . "p2" .) -}}
 </ol>
 </div>
@@ -11,7 +11,7 @@
 {{ end }}
 {{ if .p1.Title }}
 <li class="inline-block pr-2 {{ if eq .p1 .p2 }} underline text-gray-700 {{ end }}" {{ if eq .p1 .p2 }} aria-current="page" {{ end }}>
-<a class="{{ if eq .p1 .p2 }} underline text-gray-700 {{ else }} text-gray-400 {{ end }}" href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+<a class="{{ if eq .p1 .p2 }} underline text-gray-700 {{ else }} text-gray-500 {{ end }}" href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
 </li>
 {{end}}
 {{ end }}

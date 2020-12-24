@@ -12,7 +12,7 @@
       {{ $tab_name := trim .name " " }}
       {{ $id := printf "%s-%s" $tab_set_id $tab_name }}
       <li
-        class="nav-item inline-block px-3 rounded-lg border-solid border-4 border-gray-500"
+        class="nav-item inline-block px-3 m-0 rounded-lg border-solid border-2 border-gray-500"
       >
         <div class="">
           <a href="#{{ $id }}" data-toggle="tab">{{ trim .name " " }}</a>

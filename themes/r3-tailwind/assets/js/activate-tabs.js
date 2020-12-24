@@ -19,7 +19,7 @@ function activateTabSet(e) {
   var $pane = $tabSet.find(".tab-pane");
 
   $pane.each(function (index) {
-    $(this).addClass("hidden");
+    $(this).hide();
   });
 
   $tabs.each(function (index) {
@@ -33,16 +33,16 @@ function activateTabSet(e) {
       event.preventDefault();
       // ensure all panes are hidden
       $tabSet.find(".tab-content .tab-pane").each(function (index) {
-        $(this).addClass("hidden");
+        $(this).hide();
       });
       // except us when we're clicked.
-      $(tabPaneId).removeClass("hidden");
+      $(tabPaneId).show();
     });
 
     // unhide the tab pane.
     if ($tabs.length === 1 || tabName === DEFAULT_TAB_NAME) {
       $tabLink.addClass("text-bold underline");
-      $(tabPaneId).removeClass("hidden");
+      $(tabPaneId).show();
     }
   });
 }

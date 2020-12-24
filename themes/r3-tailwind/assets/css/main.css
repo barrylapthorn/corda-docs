@@ -4,6 +4,11 @@
 
 @tailwind components;
 
+#breadcrumbs li:not(:last-child):after {
+  @apply text-gray-500;
+  content: " /";
+}
+
 main ul {
   @apply list-disc block;
   @apply ml-4 mt-2;

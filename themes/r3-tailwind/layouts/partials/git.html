@@ -16,14 +16,13 @@
         >)
       </div>
     {{ end }}
-    <div class="inline-flex justify-content-end">
+    <div class="inline-flex justify-end">
       {{/* if not .Params.noedit */}}
       {{ if .File }}
         <a
           role="button"
-          class="border-gray-700 border-2 bg-gray-100 rounded-lg"
+          class="border-gray-700 border-1 bg-gray-100 rounded-md p-1"
           href="{{ .Site.Params.github_repository }}/edit/master/content/{{ .File.Lang }}/{{ .File.Path }}"
-          class="button issue"
           >{{ T "main_edit_this_page" }}</a
         >{{ end }}
 

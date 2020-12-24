@@ -1,34 +1,74 @@
-<div class="r3-o-wrapper-side col-12">
-    <div id="sidebar" class="r3-o-sidebar d-flex">
-        <div class="r3-o-sidebar__row">
-            <button
-            class="btn btn-link r3-o-sidebar__nav-toggle d-xl-none pt-1 pl-0 col-1 collapsed"
-            type="button"
-            aria-expanded="false"
-            aria-label="Toggle docs navigation">
-            {{ partial "svg/nav-icon.svg" . }}
-            </button>
-            {{ partial "search.html" . }}
+<div id="sidebar" class="flex flex-col">
+  <div class="r3-o-sidebar__row">
+    <button
+      class="btn btn-link r3-o-sidebar__nav-toggle d-xl-none pt-1 pl-0 col-1 collapsed"
+      type="button"
+      aria-expanded="false"
+      aria-label="Toggle docs navigation"
+    >
+      <svg
+        class="h-8 w-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 30 30"
+        version="1.1"
+      >
+        <g>
+          <rect width="26" height="26" fill-opacity="0" />
+          <!-- top line of trigram -->
+          <path
+            d="M2 6 l24 0"
+            stroke="#ec1d24"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <animate
+              dur="0.3s"
+              begin="startAnimation.begin"
+              attributeName="d"
+              values="M2 6 l24 0; M2 6 l16 16"
+              fill="freeze"
+            />
+          </path>
+          <!-- middle line of trigram -->
+          <path
+            d="M2 14 l24 0"
+            stroke="#ec1d24"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+          <!-- bottom line of trigarm-->
+          <path
+            d="M2 22 l24 0"
+            stroke="#ec1d24"
+            stroke-width="2"
+            stroke-linecap="round"
+          ></path>
+        </g>
+      </svg>
+    </button>
+    {{ partial "search.html" . }}
 
-            {{ $element := .Page.TableOfContents }}
-            {{ if eq $element `<nav id="TableOfContents"></nav>`}}
-                <i></i>
-            {{ else }}
-                <button
-                    class="btn btn-link r3-o-sidebar__toc-toggle d-xl-none pt-1 col-1"
-                    type="button"
-                    aria-controls="bd-docs-nav"
-                    aria-expanded="false"
-                    aria-label="Toggle Table of Contents">
-                    {{ partial "svg/toc-icon.svg" . }}
-                </button>
-            {{ end }}
-        </div>
-        <nav
-            class="collapse r3-o-sidebar__nav-content"
-            id="r3-toc-nav"
-            aria-label="Main navigation">
-            {{- partial "toc.html" . -}}
-        </nav>
-    </div>
+    {{ $element := .Page.TableOfContents }}
+    {{ if eq $element `<nav id="TableOfContents"></nav>` }}
+      <i></i>
+      {{ else }}
+      <button
+        class="btn btn-link r3-o-sidebar__toc-toggle d-xl-none pt-1 col-1"
+        type="button"
+        aria-controls="bd-docs-nav"
+        aria-expanded="false"
+        aria-label="Toggle Table of Contents"
+      >
+        {{ partial "svg/toc-icon.svg" . }}
+      </button>
+    {{ end }}
+  </div>
+  <nav
+    class="collapse r3-o-sidebar__nav-content"
+    id="r3-toc-nav"
+    aria-label="Main navigation"
+  >
+    {{- partial "toc.html" . -}}
+  </nav>
 </div>
