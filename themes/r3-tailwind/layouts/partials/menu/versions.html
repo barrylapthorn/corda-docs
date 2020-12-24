@@ -38,20 +38,25 @@
       <path d="M18 9a9 9 0 0 1-9 9"></path>
     </svg>
   </button>
+  <!-- TODO https://stackoverflow.com/questions/9279842/make-an-unordered-list-into-a-drop-down-menu -->
   <div class="dropdown-menu">
+      <ul>
     {{ range .Site.Menus.versions.ByWeight }}
       {{/* set a class against the active entry */}}
       {{ $active:=false }}
       {{ if eq .Page.Params.section_menu $sectionMenuForThisPage }}
         {{ $active = true }}{{ end }}
 
-      <a
-        href="{{ .URL }}"
-        class="small dropdown-item{{ if $active }} active{{ end }}"
-      >
-        {{ .Pre }}
-        <span>{{ .Name }}</span>
-      </a>
+      <li>
+          <a
+            href="{{ .URL }}"
+            class="small dropdown-item{{ if $active }} active{{ end }}"
+          >
+            {{ .Pre }}
+            <span>{{ .Name }}</span>
+          </a>
+      </li>
     {{ end }}
+    </ul>
   </div>
 </div>
